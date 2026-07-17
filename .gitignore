@@ -12,13 +12,26 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data (too large for git)
-data/raw/
-data/processed/
+# ===================================================
+# Original datasets (do not upload)
+# ===================================================
+
+UR_Fall/FALL/
+UR_Fall/NORMAL/
+
+Le2i/videos/
+IEEE_DataPort/raw/
+
+# Image & video files
 *.jpg
+*.jpeg
 *.png
+*.bmp
+
 *.mp4
 *.avi
+*.mov
+*.mkv
 
 # Models (too large)
 models/*.pt
@@ -42,3 +55,11 @@ Thumbs.db
 *.pem
 *.key
 *.crt
+
+# Raw datasets
+UR_Fall/FALL/
+UR_Fall/NORMAL/
+
+IEEE_DataPort/
+Le2i/
+Combined/

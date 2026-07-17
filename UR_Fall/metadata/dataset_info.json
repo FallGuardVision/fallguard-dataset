@@ -1,0 +1,14 @@
+{
+    "dataset": "UR Fall Detection",
+    "source": "University of Rzeszow",
+    "pose_model": "MediaPipe Pose Landmarker Full",
+    "landmarks": 33,
+    "features": [
+        "x",
+        "y",
+        "z",
+        "visibility"
+    ],
+    "format": "NumPy (.npy)",
+    "keypoint_shape": "(frames,33,4)"
+}
