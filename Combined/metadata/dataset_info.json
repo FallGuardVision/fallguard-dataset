@@ -1,0 +1,15 @@
+{
+    "dataset": "FallGuard Combined Dataset",
+    "version": "1.0",
+    "sources": [
+        "UR Fall Detection Dataset",
+        "Le2i Fall Detection Dataset"
+    ],
+    "representation": "MediaPipe Pose",
+    "landmarks": 33,
+    "features_per_landmark": 4,
+    "shape": "(Frames, 33, 4)",
+    "fall_sequences": 220,
+    "normal_sequences": 40,
+    "total_sequences": 260
+}
