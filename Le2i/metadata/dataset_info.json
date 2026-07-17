@@ -1,0 +1,14 @@
+{
+    "dataset": "Le2i Fall Detection",
+    "representation": "MediaPipe Pose",
+    "landmarks": 33,
+    "features_per_landmark": 4,
+    "shape": "(Frames, 33, 4)",
+    "total_sequences": 190,
+    "scenes": [
+        "Coffee_room",
+        "Home",
+        "Lecture_room",
+        "Office"
+    ]
+}
