@@ -1,0 +1,11 @@
+{
+    "dataset": "IEEE DataPort",
+    "representation": "MediaPipe Pose",
+    "landmarks": 33,
+    "features_per_landmark": 4,
+    "shape": "(Frames, 33, 4)",
+    "classes": [
+        "NORMAL"
+    ],
+    "total_sequences": 14
+}

@@ -60,4 +60,12 @@ Thumbs.db
 UR_Fall/FALL/
 UR_Fall/NORMAL/
 
-IEEE_DataPort/
+# Ignore only raw IEEE videos
+IEEE_DataPort/NORMAL_VIDEOS/
+
+# Ignore video formats everywhere
+*.mp4
+*.MP4
+*.avi
+*.mov
+*.mkv
