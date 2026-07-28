@@ -1,6 +1,6 @@
-import os
 import json
 from pathlib import Path
+
 import pandas as pd
 
 # ==========================================
@@ -16,13 +16,15 @@ META_DIR.mkdir(parents=True, exist_ok=True)
 
 rows = []
 
-# ==========================================
-# FALL
-# ==========================================
-
 fall_path = KEYPOINT_DIR / "FALL"
+normal_path = KEYPOINT_DIR / "NORMAL"
+
+# ==========================================
+# Read FALL sequences
+# ==========================================
 
 for file in sorted(fall_path.glob("*.npy")):
+
     rows.append({
         "sequence": file.name,
         "class": "FALL",
@@ -30,17 +32,20 @@ for file in sorted(fall_path.glob("*.npy")):
     })
 
 # ==========================================
-# NORMAL
+# Read NORMAL sequences
 # ==========================================
 
-normal_path = KEYPOINT_DIR / "NORMAL"
-
 for file in sorted(normal_path.glob("*.npy")):
+
     rows.append({
         "sequence": file.name,
         "class": "NORMAL",
         "source": file.name.split("_")[0]
     })
+
+# ==========================================
+# labels.csv
+# ==========================================
 
 labels = pd.DataFrame(rows)
 
@@ -49,20 +54,23 @@ labels.to_csv(
     index=False
 )
 
-print("labels.csv generated")
+print("✓ labels.csv generated")
 
 # ==========================================
-# Statistics
+# statistics.csv
 # ==========================================
+
+fall_count = len(list(fall_path.glob("*.npy")))
+normal_count = len(list(normal_path.glob("*.npy")))
 
 stats = pd.DataFrame([
     {
         "class": "FALL",
-        "count": len(list(fall_path.glob("*.npy")))
+        "count": fall_count
     },
     {
         "class": "NORMAL",
-        "count": len(list(normal_path.glob("*.npy")))
+        "count": normal_count
     }
 ])
 
@@ -71,41 +79,73 @@ stats.to_csv(
     index=False
 )
 
-print("statistics.csv generated")
+print("✓ statistics.csv generated")
 
 # ==========================================
-# Dataset Information
+# Source statistics
+# ==========================================
+
+source_counts = labels["source"].value_counts().to_dict()
+
+# ==========================================
+# dataset_info.json
 # ==========================================
 
 info = {
+
     "dataset": "FallGuard Combined Dataset",
-    "version": "1.0",
+
+    "version": "2.0",
+
     "sources": [
         "UR Fall Detection Dataset",
-        "Le2i Fall Detection Dataset"
+        "Le2i Fall Detection Dataset",
+        "IEEE DataPort Dataset"
     ],
+
     "representation": "MediaPipe Pose",
+
     "landmarks": 33,
+
     "features_per_landmark": 4,
+
     "shape": "(Frames, 33, 4)",
-    "fall_sequences": len(list(fall_path.glob("*.npy"))),
-    "normal_sequences": len(list(normal_path.glob("*.npy"))),
-    "total_sequences": len(rows)
+
+    "fall_sequences": fall_count,
+
+    "normal_sequences": normal_count,
+
+    "total_sequences": len(rows),
+
+    "source_distribution": source_counts
+
 }
 
 with open(
     META_DIR / "dataset_info.json",
     "w"
 ) as f:
+
     json.dump(info, f, indent=4)
 
-print("dataset_info.json generated")
+print("✓ dataset_info.json generated")
 
-print("\n")
-print("=" * 40)
+# ==========================================
+# Summary
+# ==========================================
+
+print()
+print("=" * 50)
 print("Combined Dataset Summary")
-print("=" * 40)
-print(f"Fall   : {len(list(fall_path.glob('*.npy')))}")
-print(f"Normal : {len(list(normal_path.glob('*.npy')))}")
-print(f"Total  : {len(rows)}")
-print("=" * 40)
+print("=" * 50)
+
+print(f"FALL sequences   : {fall_count}")
+print(f"NORMAL sequences : {normal_count}")
+print(f"TOTAL sequences  : {len(rows)}")
+
+print("\nSource Distribution")
+
+for source, count in source_counts.items():
+    print(f"  {source:<6}: {count}")
+
+print("=" * 50)
