@@ -69,3 +69,6 @@ IEEE_DataPort/NORMAL_VIDEOS/
 *.avi
 *.mov
 *.mkv
+
+# KTH raw videos
+KTH/videos/

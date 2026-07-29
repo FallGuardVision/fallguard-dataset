@@ -1,0 +1,16 @@
+{
+    "dataset": "KTH Action Recognition",
+    "version": "1.0",
+    "representation": "MediaPipe Pose",
+    "landmarks": 33,
+    "features_per_landmark": 4,
+    "shape": "(Frames,33,4)",
+    "total_sequences": 495,
+    "actions": [
+        "handclapping",
+        "handwaving",
+        "jogging",
+        "running",
+        "walking"
+    ]
+}
