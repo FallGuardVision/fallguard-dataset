@@ -98,10 +98,15 @@ info = {
     "version": "2.0",
 
     "sources": [
-        "UR Fall Detection Dataset",
-        "Le2i Fall Detection Dataset",
-        "IEEE DataPort Dataset"
-    ],
+
+    "UR Fall Detection Dataset",
+
+    "Le2i Fall Detection Dataset",
+
+    "IEEE DataPort Dataset",
+
+    "KTH Action Recognition Dataset"
+],
 
     "representation": "MediaPipe Pose",
 

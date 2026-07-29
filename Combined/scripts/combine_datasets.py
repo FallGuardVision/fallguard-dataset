@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 UR = ROOT / "UR_Fall" / "keypoints"
 LE2I = ROOT / "Le2i" / "keypoints"
 IEEE = ROOT / "IEEE_DataPort" / "keypoints"
+KTH = ROOT / "KTH" / "keypoints"
 
 COMBINED = ROOT / "Combined" / "keypoints"
 
@@ -126,6 +127,23 @@ for file in sorted((IEEE / "NORMAL").glob("*.npy")):
     shutil.copy(file, NORMAL_OUT / new_name)
 
 print("✓ IEEE DataPort copied.")
+
+# =====================================
+# KTH Normal Activities
+# =====================================
+
+print("Copying KTH dataset...")
+
+for file in sorted((KTH / "NORMAL").glob("*.npy")):
+
+    new_name = file.name
+
+    shutil.copy(
+        file,
+        NORMAL_OUT / new_name
+    )
+
+print("✓ KTH copied.")
 
 # =====================================
 # Summary

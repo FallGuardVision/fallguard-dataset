@@ -4,18 +4,21 @@
     "sources": [
         "UR Fall Detection Dataset",
         "Le2i Fall Detection Dataset",
-        "IEEE DataPort Dataset"
+        "IEEE DataPort Dataset",
+        "KTH Action Recognition Dataset"
     ],
     "representation": "MediaPipe Pose",
     "landmarks": 33,
     "features_per_landmark": 4,
     "shape": "(Frames, 33, 4)",
     "fall_sequences": 220,
-    "normal_sequences": 54,
-    "total_sequences": 274,
+    "normal_sequences": 549,
+    "total_sequences": 769,
     "source_distribution": {
+        "kth": 494,
         "le2i": 190,
         "ur": 70,
-        "ieee": 14
+        "ieee": 14,
+        "test": 1
     }
 }
