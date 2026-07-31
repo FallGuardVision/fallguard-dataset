@@ -1,0 +1,10 @@
+{
+    "dataset": "Multicam Fall Dataset",
+    "version": "1.0",
+    "representation": "MediaPipe Pose",
+    "landmarks": 33,
+    "features_per_landmark": 4,
+    "shape": "(Frames,33,4)",
+    "fall_sequences": 193,
+    "total_sequences": 193
+}
