@@ -1,21 +1,23 @@
 {
     "dataset": "FallGuard Combined Dataset",
-    "version": "2.0",
+    "version": "3.0",
     "sources": [
         "UR Fall Detection Dataset",
         "Le2i Fall Detection Dataset",
         "IEEE DataPort Dataset",
-        "KTH Action Recognition Dataset"
+        "KTH Action Recognition Dataset",
+        "Multicam Fall Dataset (MCFD)"
     ],
     "representation": "MediaPipe Pose",
     "landmarks": 33,
     "features_per_landmark": 4,
     "shape": "(Frames, 33, 4)",
-    "fall_sequences": 220,
+    "fall_sequences": 413,
     "normal_sequences": 549,
-    "total_sequences": 769,
+    "total_sequences": 962,
     "source_distribution": {
         "kth": 494,
+        "mcfd": 193,
         "le2i": 190,
         "ur": 70,
         "ieee": 14,

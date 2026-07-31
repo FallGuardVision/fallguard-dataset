@@ -95,19 +95,15 @@ info = {
 
     "dataset": "FallGuard Combined Dataset",
 
-    "version": "2.0",
+    "version": "3.0",
 
     "sources": [
-
     "UR Fall Detection Dataset",
-
     "Le2i Fall Detection Dataset",
-
     "IEEE DataPort Dataset",
-
-    "KTH Action Recognition Dataset"
+    "KTH Action Recognition Dataset",
+    "Multicam Fall Dataset (MCFD)"
 ],
-
     "representation": "MediaPipe Pose",
 
     "landmarks": 33,

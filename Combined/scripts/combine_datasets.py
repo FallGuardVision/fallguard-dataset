@@ -11,6 +11,7 @@ UR = ROOT / "UR_Fall" / "keypoints"
 LE2I = ROOT / "Le2i" / "keypoints"
 IEEE = ROOT / "IEEE_DataPort" / "keypoints"
 KTH = ROOT / "KTH" / "keypoints"
+MCFD = ROOT / "MCFD" / "keypoints"
 
 COMBINED = ROOT / "Combined" / "keypoints"
 
@@ -144,6 +145,22 @@ for file in sorted((KTH / "NORMAL").glob("*.npy")):
     )
 
 print("✓ KTH copied.")
+
+# =====================================
+# MCFD FALL
+# =====================================
+
+print("Copying MCFD Fall dataset...")
+
+for file in sorted((MCFD / "FALL").glob("*.npy")):
+
+    chute = file.stem.replace("_", "-")
+
+    new_name = f"mcfd_{chute}.npy"
+
+    shutil.copy(file, FALL_OUT / new_name)
+
+print("✓ MCFD copied.")
 
 # =====================================
 # Summary
