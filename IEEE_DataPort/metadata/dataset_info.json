@@ -1,11 +1,15 @@
 {
-    "dataset": "IEEE DataPort",
+    "dataset": "IEEE DataPort Dataset",
+    "version": "2.0",
     "representation": "MediaPipe Pose",
     "landmarks": 33,
     "features_per_landmark": 4,
     "shape": "(Frames, 33, 4)",
     "classes": [
+        "FALL",
         "NORMAL"
     ],
-    "total_sequences": 14
+    "fall_sequences": 23,
+    "normal_sequences": 14,
+    "total_sequences": 37
 }
