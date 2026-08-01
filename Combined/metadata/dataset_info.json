@@ -12,15 +12,15 @@
     "landmarks": 33,
     "features_per_landmark": 4,
     "shape": "(Frames, 33, 4)",
-    "fall_sequences": 413,
+    "fall_sequences": 436,
     "normal_sequences": 549,
-    "total_sequences": 962,
+    "total_sequences": 985,
     "source_distribution": {
         "kth": 494,
         "mcfd": 193,
         "le2i": 190,
         "ur": 70,
-        "ieee": 14,
+        "ieee": 37,
         "test": 1
     }
 }

@@ -114,15 +114,21 @@ for file in sorted((LE2I / "Office").glob("*.npy")):
 print("✓ Le2i copied.")
 
 # =====================================
-# IEEE DataPort NORMAL
+# IEEE DataPort
 # =====================================
 
-print("\nCopying IEEE DataPort...")
+print("Copying IEEE DataPort...")
 
+# FALL
+for file in sorted((IEEE / "FALL").glob("*.npy")):
+
+    new_name = file.name
+
+    shutil.copy(file, FALL_OUT / new_name)
+
+# NORMAL
 for file in sorted((IEEE / "NORMAL").glob("*.npy")):
 
-    # ieee_normal_01.npy -> ieee_normal_01.npy
-    # Prefix retained for consistency
     new_name = file.name
 
     shutil.copy(file, NORMAL_OUT / new_name)
